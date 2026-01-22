@@ -1,0 +1,435 @@
+/* =============================================================================
+   CONFIDENCE DETAILS PANEL
+   The expandable "Why this answer?" panel with progressive disclosure
+   ============================================================================= */
+
+.confidence-details {
+  margin-top: 16px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  animation: panel-expand 0.25s ease-out;
+}
+
+@keyframes panel-expand {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1000px;
+  }
+}
+
+/* Color variants */
+.confidence-details.confidence-high {
+  border-color: var(--confidence-high);
+  border-top-width: 3px;
+}
+
+.confidence-details.confidence-medium {
+  border-color: var(--confidence-medium);
+  border-top-width: 3px;
+}
+
+.confidence-details.confidence-low {
+  border-color: var(--confidence-low);
+  border-top-width: 3px;
+}
+
+/* =============================================================================
+   SECTION 1: Hero - Confidence Badge & Summary
+   ============================================================================= */
+
+.details-hero {
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hero-badge.confidence-high {
+  background: var(--confidence-high-bg);
+  color: var(--confidence-high);
+}
+
+.hero-badge.confidence-medium {
+  background: var(--confidence-medium-bg);
+  color: #b06c00;
+}
+
+.hero-badge.confidence-low {
+  background: var(--confidence-low-bg);
+  color: var(--confidence-low);
+}
+
+.hero-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.hero-summary {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* =============================================================================
+   SECTION 2: Scope Used
+   ============================================================================= */
+
+.details-scope {
+  padding: 12px 20px;
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.scope-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scope-label {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.scope-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* =============================================================================
+   SECTION 3: File Funnel (Visual Pipeline)
+   ============================================================================= */
+
+.details-funnel {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.details-funnel h4 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  margin: 0 0 12px 0;
+}
+
+.funnel-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.funnel-step {
+  flex: 1;
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.funnel-step.highlight {
+  background: var(--brand-light);
+  border-color: var(--brand-primary);
+}
+
+.funnel-step.empty {
+  opacity: 0.5;
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.funnel-step.highlight .step-number {
+  color: var(--brand-primary);
+}
+
+.step-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  margin-top: 4px;
+}
+
+.funnel-steps svg {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.funnel-breakdown {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  justify-content: center;
+}
+
+.breakdown-tag {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.breakdown-tag.high {
+  background: var(--confidence-high-bg);
+  color: var(--confidence-high);
+}
+
+.breakdown-tag.medium {
+  background: var(--confidence-medium-bg);
+  color: #b06c00;
+}
+
+/* =============================================================================
+   SECTION 4: Explanation
+   ============================================================================= */
+
+.details-explanation {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.details-explanation h4 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  margin: 0 0 8px 0;
+}
+
+.details-explanation p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* =============================================================================
+   SECTION 5: Sources Used
+   ============================================================================= */
+
+.details-sources {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.details-sources h4 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  margin: 0 0 10px 0;
+}
+
+.sources-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.source-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+}
+
+.source-item svg {
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.source-name {
+  flex: 1;
+  font-size: 13px;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.source-relevance {
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.source-relevance.high {
+  color: var(--confidence-high);
+}
+
+.source-relevance.partial {
+  color: var(--text-tertiary);
+}
+
+/* No Sources State */
+.details-no-sources {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.details-no-sources h4 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  margin: 0 0 10px 0;
+}
+
+.no-sources-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--confidence-low-bg);
+  border-radius: 8px;
+  color: var(--confidence-low);
+  font-size: 13px;
+}
+
+.no-sources-message svg {
+  flex-shrink: 0;
+}
+
+/* =============================================================================
+   SECTION 6: Suggestions (for improving confidence)
+   ============================================================================= */
+
+.details-suggestions {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.details-suggestions.confidence-low {
+  background: var(--confidence-low-bg);
+}
+
+.details-suggestions.confidence-medium {
+  background: var(--confidence-medium-bg);
+}
+
+.details-suggestions h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 10px 0;
+}
+
+.suggestions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suggestions-list li {
+  font-size: 13px;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.suggestions-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--text-tertiary);
+}
+
+.suggestions-list li strong {
+  color: var(--text-primary);
+}
+
+/* =============================================================================
+   SECTION 7: Limitations
+   ============================================================================= */
+
+.details-limitations {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.details-limitations h4 {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  margin: 0 0 10px 0;
+}
+
+.limitations-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.limitations-list li {
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.limitation-warning {
+  color: var(--text-secondary);
+}
+
+.limitation-tip {
+  color: var(--brand-primary);
+  font-weight: 500;
+}
+
+/* =============================================================================
+   SECTION 8: High Confidence Affirmation
+   ============================================================================= */
+
+.details-affirmation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: var(--confidence-high-bg);
+  color: var(--confidence-high);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.details-affirmation svg {
+  flex-shrink: 0;
+}

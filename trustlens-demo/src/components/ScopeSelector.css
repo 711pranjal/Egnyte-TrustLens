@@ -1,0 +1,89 @@
+/* Scope Selector */
+.scope-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scope-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.scope-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+}
+
+.scope-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.scope-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: var(--bg-tertiary);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.scope-button:hover:not(.disabled) {
+  background: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+.scope-button.active {
+  background: var(--brand-light);
+  color: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.scope-button.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.scope-button svg {
+  flex-shrink: 0;
+}
+
+.scope-button-label {
+  white-space: nowrap;
+}
+
+.scope-active-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--brand-primary);
+  border-radius: 50%;
+  margin-left: 4px;
+}
+
+.scope-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  padding: 6px 10px;
+  background: var(--bg-tertiary);
+  border-radius: 6px;
+}
+
+.scope-hint svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}

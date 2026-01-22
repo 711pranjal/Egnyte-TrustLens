@@ -1,0 +1,258 @@
+/* Message Base */
+.message {
+  display: flex;
+  gap: 12px;
+  max-width: 800px;
+  animation: message-in 0.3s ease;
+}
+
+@keyframes message-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Message Avatar */
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-avatar {
+  background: var(--text-secondary);
+  color: white;
+}
+
+.assistant-avatar {
+  background: var(--brand-primary);
+  color: white;
+}
+
+/* Message Content */
+.message-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* User Message */
+.user-message {
+  flex-direction: row-reverse;
+}
+
+.user-message .message-content {
+  background: var(--brand-primary);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 16px 16px 4px 16px;
+  max-width: 400px;
+  margin-left: auto;
+}
+
+.user-message .message-content p {
+  margin: 0;
+}
+
+/* Assistant Message */
+.assistant-message .message-content {
+  background: var(--bg-secondary);
+  padding: 16px 20px;
+  border-radius: 4px 16px 16px 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+/* Welcome Message */
+.welcome-message .message-content {
+  background: linear-gradient(135deg, var(--brand-light) 0%, var(--bg-secondary) 100%);
+  border: 1px solid var(--brand-primary);
+  border-opacity: 0.2;
+}
+
+/* Answer Text */
+.answer-text {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.answer-text p {
+  margin: 0 0 12px 0;
+}
+
+.answer-text p:last-child {
+  margin-bottom: 0;
+}
+
+.answer-text strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.answer-text ul {
+  margin: 8px 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.answer-text li {
+  position: relative;
+  padding-left: 20px;
+  margin: 6px 0;
+}
+
+.answer-text li::before {
+  content: "•";
+  position: absolute;
+  left: 6px;
+  color: var(--brand-primary);
+}
+
+/* Inline citations (file names) */
+.answer-text .inline-citation {
+  background: var(--brand-light);
+  color: var(--brand-primary);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'SF Mono', Monaco, 'Courier New', monospace;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* Answer Meta Bar */
+.answer-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
+.meta-divider {
+  color: var(--text-tertiary);
+}
+
+.meta-scope,
+.meta-files {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.meta-scope svg,
+.meta-files svg {
+  color: var(--text-tertiary);
+}
+
+/* Confidence Badge */
+.confidence-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.confidence-badge:hover {
+  transform: scale(1.02);
+}
+
+.confidence-badge.active {
+  box-shadow: 0 0 0 2px currentColor;
+}
+
+.confidence-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.confidence-high {
+  background: var(--confidence-high-bg);
+  color: var(--confidence-high);
+}
+
+.confidence-medium {
+  background: var(--confidence-medium-bg);
+  color: #b06c00;
+}
+
+.confidence-low {
+  background: var(--confidence-low-bg);
+  color: var(--confidence-low);
+}
+
+/* Why Button */
+.why-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color var(--transition-fast);
+}
+
+.why-button:hover {
+  color: var(--brand-primary);
+}
+
+.why-button svg {
+  transition: transform var(--transition-fast);
+}
+
+.why-button.expanded svg {
+  transform: rotate(90deg);
+}
+
+/* Streaming Effect */
+.streaming-cursor {
+  display: inline-block;
+  color: var(--brand-primary);
+  animation: cursor-blink 0.8s infinite;
+  font-weight: normal;
+  margin-left: 2px;
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Fade in animation for elements that appear after streaming */
+.fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
